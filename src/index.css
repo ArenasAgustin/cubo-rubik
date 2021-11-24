@@ -1,3 +1,17 @@
+:root {
+  --red: #e50b36;
+  --green: #007e00;
+  --blue: #0000ff;
+  --yellow: #ffd700;
+  --orange: #ff8c00;
+  --black: #0d0d0d;
+  --white: #f2f2f2;
+  --background-1: #d2f8d2;
+  --background-2: #8fbc8f;
+  --shadow-1: rgba(0, 0, 0, 0.15);
+  --shadow-2: rgba(0, 0, 0, 0.1);
+}
+
 html,
 body {
   width: 100vw;
@@ -21,6 +35,9 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.face {
   background: black;
 }
 
@@ -41,48 +58,90 @@ body {
   transform: translateZ(175px);
 }
 
-.one-inner-face{
-  background: crimson;
+.one-inner-face {
+  background: var(--red);
 }
 
-#two{
+#two {
   transform: translateX(175px) rotateY(90deg);
 }
 
-.two-inner-face{
-  background: darkorange;
+.two-inner-face {
+  background: var(--orange);
 }
 
 #tree {
   transform: translateZ(-175px);
 }
 
-.tree-inner-face{
-  background: yellow;
+.tree-inner-face {
+  background: var(--yellow);
 }
 
 #four {
   transform: translateX(-175px) rotateY(90deg);
 }
 
-.four-inner-face{
-  background: blue;
+.four-inner-face {
+  background: var(--blue);
 }
 
 #five {
   transform: translateY(-175px) rotateX(90deg);
 }
 
-.five-inner-face{
-  background: green;
+.five-inner-face {
+  background: var(--green);
 }
 
 #six {
   transform: translateY(175px) rotateX(90deg);
 }
 
-.six-inner-face{
-  background: white;
+.six-inner-face {
+  background: var(--white);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  background-color: var(--background-1);
+  background-image: radial-gradient(circle, var(--background-1) 40%, var(--background-2) 70%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.background .polygon {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: var(--shadow-1);
+  clip-path: polygon(25% 65%, 75% 35%, 100% 50%, 100% 100%, 30% 100%);
+}
+
+.background .triangle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--shadow-2);
+}
+
+.background .triangle-1 {
+  clip-path: polygon(0 80%, 25% 100%, 0 100%);
+}
+
+.background .triangle-2 {
+  clip-path: polygon(0 100%, 40% 80%, 60% 100%);
+}
+
+.background .triangle-3 {
+  clip-path: polygon(0 100%, 100% 84%, 100% 100%);
+}
+
+.background .triangle-4 {
+  clip-path: polygon(75% 100%, 100% 25%, 100% 100%);
 }
 
 @keyframes rotateCube {
